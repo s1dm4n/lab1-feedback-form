@@ -1,8 +1,3 @@
-<?php
-/**
- * Страница 2 — Результат работы функции get_headers()
- */
-?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -10,7 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>get_headers() — Лабораторная работа</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f0f2f5;
@@ -20,20 +20,33 @@
             min-height: 100vh;
         }
 
-        /* HEADER */
+        /* ===== HEADER ===== */
         header {
-            background-color: #fff;
+            background-color: #ffffff;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             padding: 15px 30px;
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
-        .header-left { display: flex; align-items: center; gap: 15px; }
-        .header-left img { height: 50px; }
-        .header-center { font-size: 1.2rem; font-weight: 600; color: #1a1a2e; }
 
-        /* MAIN */
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .header-left img {
+            height: 50px;
+        }
+
+        .header-center {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1a1a2e;
+        }
+
+        /* ===== MAIN ===== */
         main {
             flex: 1;
             display: flex;
@@ -41,6 +54,7 @@
             align-items: flex-start;
             padding: 40px 20px;
         }
+
         .result-container {
             background: #fff;
             border-radius: 12px;
@@ -49,11 +63,13 @@
             width: 100%;
             max-width: 850px;
         }
+
         .result-container h2 {
             text-align: center;
             margin-bottom: 25px;
             color: #1a1a2e;
         }
+
         textarea {
             width: 100%;
             min-height: 420px;
@@ -67,7 +83,13 @@
             background-color: #f8f9fa;
             color: #333;
         }
-        .back-link { display: block; text-align: center; margin-top: 20px; }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+        }
+
         .btn {
             padding: 12px 28px;
             border: none;
@@ -78,10 +100,17 @@
             display: inline-block;
             transition: background 0.2s;
         }
-        .btn-secondary { background-color: #e0e0e0; color: #333; }
-        .btn-secondary:hover { background-color: #d0d0d0; }
 
-        /* FOOTER */
+        .btn-secondary {
+            background-color: #e0e0e0;
+            color: #333;
+        }
+
+        .btn-secondary:hover {
+            background-color: #d0d0d0;
+        }
+
+        /* ===== FOOTER ===== */
         footer {
             background-color: #1a1a2e;
             color: #ccc;
@@ -96,8 +125,7 @@
 <!-- HEADER -->
 <header>
     <div class="header-left">
-        <img src="https://mospolytech.ru/local/templates/main/img/logo.svg" alt="МосПолитех"
-             onerror="this.src='https://via.placeholder.com/120x50?text=МосПолитех'">
+        <img src="https://mospolytech.ru/local/templates/main/img/logo.svg" alt="Логотип МосПолитеха" onerror="this.src='https://via.placeholder.com/120x50?text=МосПолитех'">
     </div>
     <div class="header-center">Задание для самостоятельной работы «Feedback form»</div>
     <div style="width:120px;"></div>
@@ -113,7 +141,7 @@ $headers = @get_headers($url, 1);
 
 if ($headers !== false) {
     echo "URL: {$url}\n";
-    echo str_repeat('─', 60) . "\n\n";
+    echo str_repeat('═', 70) . "\n\n";
     foreach ($headers as $key => $value) {
         if (is_int($key)) {
             echo $value . "\n";
@@ -122,7 +150,7 @@ if ($headers !== false) {
         }
     }
 } else {
-    echo "Не удалось получить заголовки.\n";
+    echo "❌ Ошибка: не удалось получить заголовки.\n";
     echo "Проверьте подключение к интернету или доступность сайта {$url}.";
 }
 ?></textarea>
