@@ -20,7 +20,7 @@
 <!-- MAIN -->
 <main>
     <div class="result-container">
-        <h2>📡 Результат работы функции get_headers()</h2>
+        <h2>Результат работы функции get_headers()</h2>
         <textarea readonly><?php
 $url = 'https://httpbin.org/post';
 $headers = @get_headers($url, 1);
@@ -36,12 +36,12 @@ if ($headers !== false) {
         }
     }
 } else {
-    echo "❌ Ошибка: не удалось получить заголовки.\n";
+    echo "Ошибка: не удалось получить заголовки.\n";
     echo "Проверьте подключение к интернету или доступность сайта {$url}.";
 }
 ?></textarea>
         <div class="back-link">
-            <a href="index.php" class="btn btn-secondary">← Вернуться к форме</a>
+            <a href="index.php" class="btn btn-secondary">Вернуться к форме</a>
         </div>
     </div>
 </main>

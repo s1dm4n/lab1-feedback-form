@@ -20,7 +20,7 @@
     <!-- MAIN -->
     <main>
         <div class="form-container">
-            <h2>📋 Форма обратной связи</h2>
+            <h2>Форма обратной связи</h2>
             <form action="https://httpbin.org/post" method="POST">
                 <div class="form-group">
                     <label for="username">Имя пользователя</label>
@@ -60,8 +60,8 @@
                 </div>
 
                 <div class="form-actions">
-                    <button type="submit" class="btn btn-primary">📤 Отправить</button>
-                    <a href="result.php" class="btn btn-secondary">Страница 2 →</a>
+                    <button type="submit" class="btn btn-primary">Отправить</button>
+                    <a href="result.php" class="btn btn-secondary">Страница 2</a>
                 </div>
             </form>
         </div>
