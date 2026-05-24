@@ -11,7 +11,7 @@
     <!-- HEADER -->
     <header>
         <div class="header-left">
-            <img src="https://mospolytech.ru/local/templates/main/dist/img/logos/mospolytech-logo-black.svg" alt="Логотип МосПолитеха">
+            <img src="https://mospolytech.ru/local/templates/main/dist/img/logos/mospolytech-logo-white.svg" alt="Логотип МосПолитеха">
         </div>
         <div class="header-center">Задание для самостоятельной работы «Feedback form»</div>
         <div style="width:120px;"></div>
@@ -60,8 +60,12 @@
                 </div>
 
                 <div class="form-actions">
-                    <button type="submit" class="btn btn-primary">Отправить</button>
-                    <a href="result.php" class="btn btn-secondary">Страница 2</a>
+                    <button type="submit" class="btn btn-primary">
+                        <span class="btn__text">Отправить</span>
+                    </button>
+                    <a  href="result.php" class="btn btn-secondary">
+                        <span class="btn__text">Результат</span>
+                    </a>
                 </div>
             </form>
         </div>

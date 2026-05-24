@@ -1,14 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geologica:wght,CRSV@100..900,0&display=swap');
 
-* {
+*, *::before, *::after {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box !important;
+    font-family: 'Geologica', sans-serif !important;
+    text-decoration: none;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: #1a1a1a;
+    background-color: #272a2f;
     color: #ffffff;
     display: flex;
     flex-direction: column;
@@ -17,12 +18,12 @@ body {
 
 /* ===== HEADER ===== */
 header {
-    background-color: #0f0f0f;
+    background-color: #272a2f;
     padding: 15px 30px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.075);
 }
 
 .header-left {
@@ -54,9 +55,9 @@ main {
 
 .form-container,
 .result-container {
-    background: #262626;
-    border: 1px solid #333;
-    border-radius: 12px;
+    background: #272a2f;
+    border: 1px solid rgba(255, 255, 255, 0.075);
+
     padding: 40px;
     width: 100%;
     max-width: 550px;
@@ -85,26 +86,46 @@ main {
     color: #e0e0e0;
 }
 
-.form-group input[type="text"],
-.form-group input[type="email"],
-.form-group select,
-.form-group textarea {
+input[type="text"],
+input[type="email"],
+select,
+textarea {
     width: 100%;
     padding: 10px 14px;
-    border: 1px solid #444;
-    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.226);
     font-size: 1rem;
-    background-color: #1a1a1a;
+    background-color: #272a2f;
     color: #ffffff;
-    font-family: 'Inter', sans-serif;
     transition: border-color 0.2s;
 }
 
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M3 4.5l3 3 3-3' fill='none' stroke='white' stroke-width='2'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    /* Положение: по вертикали — центр, по горизонтали — отступ от правого края */
+    background-position: right 12px center;
+    background-size: 18px;
+}
+
+input[type="checkbox"] {
+    accent-color: #e45b5b; /* цвет заливки и галочки */
+    width: 16px;
+    height: 16px;
+}
+
+input[type="checkbox"]:hover {
+    accent-color: #cf4c4c;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
     outline: none;
-    border-color: #5a7cff;
+    border-color: #e45b5b;
 }
 
 .form-group textarea {
@@ -135,20 +156,6 @@ main {
     gap: 10px;
 }
 
-textarea {
-    width: 100%;
-    min-height: 420px;
-    padding: 15px;
-    border: 1px solid #444;
-    border-radius: 8px;
-    font-family: 'Inter', 'Courier New', monospace;
-    font-size: 0.85rem;
-    line-height: 1.6;
-    resize: vertical;
-    background-color: #1a1a1a;
-    color: #e0e0e0;
-}
-
 .back-link {
     display: block;
     text-align: center;
@@ -156,50 +163,87 @@ textarea {
 }
 
 .btn {
-    padding: 12px 28px;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.2s, transform 0.1s;
-    text-decoration: none;
-    display: inline-block;
-    flex: 1;
     text-align: center;
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-}
-
-.btn:active {
-    transform: scale(0.97);
-}
-
-.btn-primary {
-    background-color: #5a7cff;
-    color: #ffffff;
+    flex: 1;
+    font-size: 18px;
+    font-weight: 700;
+    color: #4c0000 !important;
+    margin: 0;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    padding: 12px 28px;
+    gap: 12px;
+    background-color: transparent;
     border: none;
+    position: relative;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    width: -moz-fit-content;
+    width: fit-content;
 }
-
-.btn-primary:hover {
-    background-color: #4a6ce6;
+.btn__text {
+    flex: 1;
+    transition: color 0.3s ease;
+}
+.btn__text,
+.btn svg {
+    position: relative;
+    z-index: 3;
+}
+.btn::before, .btn::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+.btn::before {
+    background-color: #e45b5b;
+    z-index: 1;
+}
+.btn::after {
+    height: 0;
+    background-color: #4c0000;
+    transition: height 0.3s ease;
+}
+.btn:hover {
+    color: #e45b5b !important;
+    fill: #e45b5b !important;
+}
+.btn:hover::after {
+    height: 100%;
+}
+.btn:active {
+    opacity: 0.8;
 }
 
 .btn-secondary {
-    background-color: #333;
-    color: #ffffff;
-    border: 1px solid #444;
+  color: #ffffff !important;
+}
+.btn-secondary::before {
+  background: transparent;
+  border: 1px solid #ffffff !important;
+}
+.btn-secondary::after {
+  background-color: #ffffff !important;
+}
+.btn-secondary:hover {
+  color: #272a2f !important;
 }
 
-.btn-secondary:hover {
-    background-color: #404040;
+.result-container textarea {
+    min-height: 420px;
 }
 
 /* ===== FOOTER ===== */
 footer {
-    background-color: #0f0f0f;
+    background-color: #272a2f;
     color: #888;
     text-align: center;
     padding: 15px;
     font-size: 0.9rem;
-    border-top: 1px solid #333;
+    border-top: 1px solid rgba(255, 255, 255, 0.075);
 }

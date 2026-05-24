@@ -11,7 +11,7 @@
 <!-- HEADER -->
 <header>
     <div class="header-left">
-        <img src="https://mospolytech.ru/local/templates/main/dist/img/logos/mospolytech-logo-black.svg" alt="Логотип МосПолитеха">
+        <img src="https://mospolytech.ru/local/templates/main/dist/img/logos/mospolytech-logo-white.svg" alt="Логотип МосПолитеха">
     </div>
     <div class="header-center">Задание для самостоятельной работы «Feedback form»</div>
     <div style="width:120px;"></div>
@@ -41,7 +41,9 @@ if ($headers !== false) {
 }
 ?></textarea>
         <div class="back-link">
-            <a href="index.php" class="btn btn-secondary">Вернуться к форме</a>
+            <a href="index.php" class="btn btn-secondary">
+                <span class="btn__text">Вернуться к форме</span>
+            </a>
         </div>
     </div>
 </main>
