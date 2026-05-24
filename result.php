@@ -22,7 +22,7 @@
     <div class="result-container">
         <h2>📡 Результат работы функции get_headers()</h2>
         <textarea readonly><?php
-$url = 'https://mospolytech.ru';
+$url = 'https://httpbin.org/post';
 $headers = @get_headers($url, 1);
 
 if ($headers !== false) {
